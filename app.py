@@ -21,16 +21,16 @@ class URL(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     access_count = db.Column(db.Integer, default=0)
 
-# Generate a short code
+# Generates a short code to shorten url
 def generate_short_code(length=6):
     characters = string.ascii_letters + string.digits
     return ''.join(random.choices(characters, k=length))
 
-# Initialize DB
+# Initializes DB
 with app.app_context():
     db.create_all()
 
-# Homepage - Form to shorten URLs
+# Homepage/input to shorten URLs
 @app.route('/', methods=['GET'])
 def home():
     return render_template('index.html')
