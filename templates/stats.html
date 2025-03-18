@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>URL Statistics</h1>
+
+    <p><strong>Original URL:</strong> <a href="{{ original_url }}" target="_blank">{{ original_url }}</a></p>
+    <p><strong>Short Code:</strong> {{ short_code }}</p>
+    <p><strong>Created At:</strong> {{ created_at }}</p>
+    <p><strong>Updated At:</strong> {{ updated_at }}</p>
+    <p><strong>Access Count:</strong> {{ access_count }}</p>
+
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+
+</html>
